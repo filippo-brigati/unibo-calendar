@@ -8,7 +8,10 @@ let csvContent = 'Subject,Start Date,Start Time,End Date,End Time,Location,Descr
 
 eventData.forEach(event => {
   const startDate = new Date(event.start);
+  startDate.setHours(startDate.getHours() + 2);
+
   const endDate = new Date(event.end);
+  endDate.setHours(endDate.getHours() + 2);
 
   const startDateString = startDate.toISOString().substring(0, 10);
   const startTimeString = startDate.toISOString().substring(11, 16);
